@@ -75,11 +75,11 @@ export default class App extends React.Component {
 						}
 					}
 				}
-				{(this.state.isChallenges)?this.setState({data: temp, topFilter: 'football'}):this.setState({data: temp1, topFilter: 'football'})}
-				// this.setState({
-				// 	data: temp,
-				// 	topFilter: 'football',
-				// })
+				{
+					(this.state.isChallenges) ?
+						this.setState({ data: temp, topFilter: 'football' }) :
+						this.setState({ data: temp1, topFilter: 'football' })
+				}
 				break;
 			case 'cricket':
 				for (let a of this.state.allData) {
@@ -93,11 +93,11 @@ export default class App extends React.Component {
 						}
 					}
 				}
-				{(this.state.isChallenges)?this.setState({data: temp, topFilter: 'cricket'}):this.setState({data: temp1, topFilter: 'cricket'})}
-				// this.setState({
-				// 	data: temp,
-				// 	topFilter: 'cricket',
-				// })
+				{
+					(this.state.isChallenges) ?
+						this.setState({ data: temp, topFilter: 'cricket' }) :
+						this.setState({ data: temp1, topFilter: 'cricket' })
+				}
 				break;
 			case 'all':
 				if (this.state.isChallenges) {
@@ -121,10 +121,6 @@ export default class App extends React.Component {
 		let util = [];
 		debugger;
 		if (data === false) {
-			// this.setState({
-			// 	data: this.state.inPlayData,
-			// 	isChallenges: false,
-			// })
 			switch (this.state.topFilter) {
 				case 'all':
 					this.setState({
@@ -158,10 +154,6 @@ export default class App extends React.Component {
 					break;
 			}
 		} else {
-			// this.setState({
-			// 	data: this.state.challengesData,
-			// 	isChallenges: true,
-			// })
 			switch (this.state.topFilter) {
 				case 'all':
 					this.setState({
@@ -201,22 +193,14 @@ export default class App extends React.Component {
 		debugger;
 		return (
 			<div style={{ backgroundColor: 'black' }}>
-				<h2 style={{ color: 'white', margin: '0px 20px 0px 20px', padding: '20px 0px 20px 0px' ,textAlign: 'center', fontFamily: 'serif', fontWeight: 'normal', background: 'linear-gradient(135deg, midnightblue, midnightblue, midnightblue, blue, lightblue)' }}>Challenges</h2>
+				<h2 style={{
+					color: 'white', margin: '0px 20px 0px 20px',
+					padding: '20px 0px 20px 0px', textAlign: 'center', fontFamily: 'serif', fontWeight: 'normal',
+					background: 'linear-gradient(135deg, midnightblue, midnightblue, midnightblue, blue, lightblue)'
+				}}>
+					Challenges</h2>
 				<TopFilter sport={this.callbkFromTopFilter} />
 				<AdvertFilter />
-				{/* {((this.state.isChallenges) ?
-					this.state.challengesData.map(x => {
-						return (
-							<GameCard jsonData={x} />
-						)
-					})
-					:
-					this.state.inPlayData.map(x => {
-						return (
-							<GameCard jsonData={x} />
-						)
-					})
-				)} */}
 				{
 					this.state.data.map(x => {
 						return (
@@ -224,11 +208,6 @@ export default class App extends React.Component {
 						)
 					})
 				}
-				{/* {this.state.data.map(x => {
-					return (
-						<GameCard jsonData={x} />
-					)
-				})} */}
 				<BottomFilter isChallengesSelected={this.state.isChallenges} callbk={this.callbkFromBtmFilter} />
 			</div>
 		);

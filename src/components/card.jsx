@@ -12,14 +12,21 @@ class GameCard extends React.Component {
     const x = this.props.jsonData.startTime;
     const y = this.props.jsonData.endTime;
     const currTime = moment();
-    const timeBlock = (moment(x).isValid()) ? ((this.props.jsonData.endTime.length != 0) ? moment.parseZone(x).format('DD[th] MMM') + ' - ' + moment.parseZone(y).format('DD[th] MMM') : moment.parseZone(x).format('DD[th] MMM')) : '';
-    const timeFromNow = ((moment(x).isValid()) ? (currTime.diff(moment(x), 'hours') + 'h ' + currTime.diff(moment(x), 'minutes') + 'm ' + currTime.diff(moment(x), 'seconds') + 's') : '');
+    const timeBlock = (moment(x).isValid()) ? ((this.props.jsonData.endTime.length != 0) ?
+      moment.parseZone(x).format('DD[th] MMM') + ' - ' + moment.parseZone(y).format('DD[th] MMM') :
+      moment.parseZone(x).format('DD[th] MMM')) : '';
+    const timeFromNow = ((moment(x).isValid()) ?
+      (currTime.diff(moment(x), 'hours') + 'h ' + currTime.diff(moment(x), 'minutes') + 'm ' +
+        currTime.diff(moment(x), 'seconds') + 's') : '');
     return (
-      <div className="cardMain" style={{ backgroundColor: '#181818', margin: '20px', color: 'white', fontFamily: 'serif' }}>
-        <h2 className="cardHeader" style={{ display: 'inline-block', margin: '20px', paddingTop: '20px', fontWeight: 'normal' }}>
+      <div className="cardMain" style={{
+        backgroundColor: '#181818', margin: '20px', color: 'white', fontFamily: 'serif'
+      }}>
+        <h2 className="cardHeader" style={{
+          display: 'inline-block', margin: '20px', paddingTop: '20px', fontWeight: 'normal'
+        }}>
           {this.props.jsonData.name}
         </h2>
-        {/* {(this.props.jsonData.sportName === 'cricket') ? <img src={cricLogo} /> : ((this.props.jsonData.sportName === 'football') ? <img src={footLogo} /> : '')} */}
         <div>
           <div className="tourneyName" style={{ marginLeft: '20px', float: 'left' }}>
             {this.props.jsonData.tournament}
@@ -39,7 +46,6 @@ class GameCard extends React.Component {
               <tr>
                 <td style={{ textAlign: 'center', color: 'limegreen', fontWeight: 'bold' }}>&#x20b9; {this.props.jsonData.prizes}</td>
                 <td style={cellStyle}>{this.props.jsonData.games}</td>
-                {/* <td style={cellStyle}>{timeFromNow}</td> */}
                 <td style={cellStyle}>{this.props.jsonData.games}</td>
               </tr>
             </tbody>
@@ -50,4 +56,3 @@ class GameCard extends React.Component {
 }
 
 export default GameCard;
-

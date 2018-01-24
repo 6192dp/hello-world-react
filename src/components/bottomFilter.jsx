@@ -31,21 +31,25 @@ class BottomFilter extends React.Component {
   render() {
     const spanStyle = { color: 'white' };
     const cursorStyle = { cursor: 'pointer' };
-    const divStyle = {flex: 1, textAlign: 'center', margin: '10px'};
+    const divStyle = { flex: 1, textAlign: 'center', margin: '10px' };
     return (
       <div>
         {(this.props.isChallengesSelected) ?
-          <div className='btmFilt' style={{display: 'flex'}}>
-            <div style={divStyle}><div><img src={Challenges} style={cursorStyle} onClick={this.handleChallengesLineClick} /></div>
-            <span className="caption" style={spanStyle}>Challenges</span></div>
-            <div style={divStyle}><div><img src={InPlayLine} style={cursorStyle} onClick={this.handlePlayLineClick} /></div>
-            <span className="caption" style={spanStyle}>In Play</span></div>
+          <div className='btmFilt' style={{ display: 'flex' }}>
+            <div style={divStyle}><div><img src={Challenges} style={cursorStyle}
+              onClick={this.handleChallengesLineClick} /></div>
+              <span className="caption" style={spanStyle}>Challenges</span></div>
+            <div style={divStyle}><div><img src={InPlayLine} style={cursorStyle}
+              onClick={this.handlePlayLineClick} /></div>
+              <span className="caption" style={spanStyle}>In Play</span></div>
           </div> :
-          <div className='btmFilt' style={{display: 'flex'}}>
-            <div style={divStyle}><div><img src={ChallengesLine} style={cursorStyle} onClick={this.handleChallengesLineClick} /></div>
-            <span className="caption" style={spanStyle}>Challenges</span></div>
-            <div style={divStyle}><div><img src={InPlay} style={cursorStyle} onClick={this.handlePlayLineClick} /></div>
-            <span className="caption" style={spanStyle}>In Play</span></div>
+          <div className='btmFilt' style={{ display: 'flex' }}>
+            <div style={divStyle}><div><img src={ChallengesLine} style={cursorStyle}
+              onClick={this.handleChallengesLineClick} /></div>
+              <span className="caption" style={spanStyle}>Challenges</span></div>
+            <div style={divStyle}><div><img src={InPlay} style={cursorStyle}
+              onClick={this.handlePlayLineClick} /></div>
+              <span className="caption" style={spanStyle}>In Play</span></div>
           </div>
         }
       </div>);
