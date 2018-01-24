@@ -4,6 +4,7 @@ import Moment from 'react-moment';
 import moment from 'moment';
 import footLogo from '../../assets/images/Foob-48.png';
 import cricLogo from '../../assets/images/Cric-48.png';
+import {msToHMS} from '../common/utils';
 
 class GameCard extends React.Component {
   render() {
@@ -17,9 +18,8 @@ class GameCard extends React.Component {
     const timeBlock = (moment(x).isValid()) ? ((this.props.jsonData.endTime.length != 0) ?
       moment.parseZone(x).format('DD[th] MMM') + ' - ' + moment.parseZone(y).format('DD[th] MMM') :
       moment.parseZone(x).format('DD[th] MMM')) : '';
-    const timeFromNow = ((moment(x).isValid()) ?
-      (currTime.diff(moment(x), 'hours') + 'h ' + currTime.diff(moment(x), 'minutes') + 'm ' +
-        currTime.diff(moment(x), 'seconds') + 's') : '');
+    const timeFromNow = ((moment(x).isValid() && currTime.diff(moment(x))<0) ?
+      (moment(x).diff(currTime, 'hours') + ' hrs') : 'NA');
     return (
       <div className="cardMain" style={{
         backgroundColor: '#181818', margin: '20px', color: 'white', fontFamily: 'serif'
@@ -60,7 +60,7 @@ class GameCard extends React.Component {
               <tr>
                 <td style={{ textAlign: 'center', color: 'limegreen', fontWeight: 'bold' }}>&#x20b9; {this.props.jsonData.prizes}</td>
                 <td style={cellStyle}>{this.props.jsonData.games}</td>
-                <td style={cellStyle}>{this.props.jsonData.games}</td>
+                <td style={cellStyle}>{timeFromNow}</td>
               </tr>
             </tbody>
           </table>
