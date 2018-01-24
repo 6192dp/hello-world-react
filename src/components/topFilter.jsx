@@ -22,7 +22,6 @@ class TopFilter extends React.Component {
   }
 
   handleFootClick() {
-    debugger;
     this.setState({
       allMenuStyle: tileStyle,
       cricMenuStyle: tileStyle,

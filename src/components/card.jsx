@@ -7,6 +7,8 @@ import cricLogo from '../../assets/images/Cric-48.png';
 
 class GameCard extends React.Component {
   render() {
+    debugger;
+    const iconStyle = { float: 'right', margin: '20px 20px 0px 0px' }
     const tableHeaderStyle = { fontWeight: 'normal' }
     const cellStyle = { textAlign: 'center', fontWeight: 'bold' }
     const x = this.props.jsonData.startTime;
@@ -22,11 +24,23 @@ class GameCard extends React.Component {
       <div className="cardMain" style={{
         backgroundColor: '#181818', margin: '20px', color: 'white', fontFamily: 'serif'
       }}>
-        <h2 className="cardHeader" style={{
-          display: 'inline-block', margin: '20px', paddingTop: '20px', fontWeight: 'normal'
-        }}>
-          {this.props.jsonData.name}
-        </h2>
+        <div style={{ display: "inline-block", width: '100%' }}>
+          <div style={{ float: 'left' }}>
+            <h2 className="cardHeader" style={{
+              display: 'inline-block', margin: '20px', paddingTop: '20px', fontWeight: 'normal'
+            }}>
+              {this.props.jsonData.name}
+            </h2>
+          </div>
+          {
+            (this.props.jsonData.sportName.length === 2) ?
+              <div style={iconStyle}><img src={footLogo} /><img src={cricLogo} /></div>
+              :
+              ((this.props.jsonData.sportName === 'football') ?
+                <div style={iconStyle}><img src={footLogo} /></div>
+                : <div style={iconStyle}><img src={cricLogo} /></div>)
+          }
+        </div>
         <div>
           <div className="tourneyName" style={{ marginLeft: '20px', float: 'left' }}>
             {this.props.jsonData.tournament}
@@ -36,7 +50,7 @@ class GameCard extends React.Component {
           </div>
           <br />
           <br />
-          <table width='100%'>
+          <table width='100%' style={{ paddingBottom: '20px' }}>
             <tbody>
               <tr>
                 <th style={tableHeaderStyle}>PRIZES</th>

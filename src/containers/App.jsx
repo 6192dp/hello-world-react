@@ -30,7 +30,6 @@ export default class App extends React.Component {
 	componentWillMount() {
 		game_data()
 			.then(res => {
-				debugger;
 				for (let a of res) {
 					if (a.isJoined === 0) {
 						this.challengesData.push(a);
@@ -61,7 +60,6 @@ export default class App extends React.Component {
 	callbkFromTopFilter(data) {
 		let temp = [];
 		let temp1 = [];
-		debugger;
 		switch (data) {
 			case 'football':
 				for (let a of this.state.allData) {
@@ -119,7 +117,6 @@ export default class App extends React.Component {
 
 	callbkFromBtmFilter(data) {
 		let util = [];
-		debugger;
 		if (data === false) {
 			switch (this.state.topFilter) {
 				case 'all':
