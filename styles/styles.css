@@ -1,0 +1,94 @@
+.topFilterCaption, .btmFilterCaption{
+    color: white; 
+}
+
+.topFilterItem{
+    margin: 10px;
+}
+
+.topFiltParent{
+    display: flex; 
+    margin: 0px 20px 20px 20px;
+}
+
+.btmFilt{
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+.btmFiltParent{
+    display: flex;
+}
+
+.btmFiltInplay, .btmFiltChal {
+    cursor: pointer;
+}
+
+.advert{
+    margin: 20px;
+    background-repeat: repeat-x;
+    height: 180px; 
+    width: 97%; 
+    cursor: pointer;
+}
+
+.cardTable td{
+    text-align: center;
+    font-weight: bold;
+}
+
+td.cardPrize{
+    color: limegreen;
+}
+
+.cardTable th{
+    font-weight: normal;
+}
+
+.timeRange{
+    margin-right: 20px;
+    text-align: right;
+}
+
+.tourneyName{
+    margin-left: 20px;
+    float: left;
+}
+
+.sportIcon{
+    float: right;
+    margin: 20px 20px 0px 0px;
+}
+
+.cardMain{
+    background-color: #181818;
+    margin: 20px;
+    color: white; 
+    font-family: serif;
+}
+
+.cardHeader{
+    display: inline-block;
+    margin: 20px;
+    padding-top: 20px;
+    font-weight: normal;
+}
+
+.cardTable{
+    padding-bottom: 20px;
+}
+
+.appParent{
+    background-color: black;
+}
+
+.appHeader{
+        color: white;
+        margin: 0px 20px 0px 20px;
+        padding: 20px 0px 20px 0px;
+        text-align: center; 
+        font-family: serif;
+        font-weight: normal;
+        background: linear-gradient(135deg, midnightblue, midnightblue, midnightblue, blue, lightblue);
+}

@@ -189,13 +189,8 @@ export default class App extends React.Component {
 	render() {
 		debugger;
 		return (
-			<div style={{ backgroundColor: 'black' }}>
-				<h2 style={{
-					color: 'white', margin: '0px 20px 0px 20px',
-					padding: '20px 0px 20px 0px', textAlign: 'center', fontFamily: 'serif', fontWeight: 'normal',
-					background: 'linear-gradient(135deg, midnightblue, midnightblue, midnightblue, blue, lightblue)'
-				}}>
-					Challenges</h2>
+			<div className="appParent">
+				<h2 className="appHeader">Challenges</h2>
 				<TopFilter sport={this.callbkFromTopFilter} />
 				<AdvertFilter />
 				{

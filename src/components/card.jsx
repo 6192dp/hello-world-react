@@ -8,10 +8,6 @@ import {msToHMS} from '../common/utils';
 
 class GameCard extends React.Component {
   render() {
-    debugger;
-    const iconStyle = { float: 'right', margin: '20px 20px 0px 0px' }
-    const tableHeaderStyle = { fontWeight: 'normal' }
-    const cellStyle = { textAlign: 'center', fontWeight: 'bold' }
     const x = this.props.jsonData.startTime;
     const y = this.props.jsonData.endTime;
     const currTime = moment();
@@ -21,46 +17,42 @@ class GameCard extends React.Component {
     const timeFromNow = ((moment(x).isValid() && currTime.diff(moment(x))<0) ?
       (moment(x).diff(currTime, 'hours') + ' hrs') : 'NA');
     return (
-      <div className="cardMain" style={{
-        backgroundColor: '#181818', margin: '20px', color: 'white', fontFamily: 'serif'
-      }}>
+      <div className="cardMain">
         <div style={{ display: "inline-block", width: '100%' }}>
           <div style={{ float: 'left' }}>
-            <h2 className="cardHeader" style={{
-              display: 'inline-block', margin: '20px', paddingTop: '20px', fontWeight: 'normal'
-            }}>
+            <h2 className="cardHeader">
               {this.props.jsonData.name}
             </h2>
           </div>
           {
             (this.props.jsonData.sportName.length === 2) ?
-              <div style={iconStyle}><img src={footLogo} /><img src={cricLogo} /></div>
+              <div className="sportIcon"><img src={footLogo} /><img src={cricLogo} /></div>
               :
               ((this.props.jsonData.sportName === 'football') ?
-                <div style={iconStyle}><img src={footLogo} /></div>
-                : <div style={iconStyle}><img src={cricLogo} /></div>)
+                <div className="sportIcon"><img src={footLogo} /></div>
+                : <div className="sportIcon"><img src={cricLogo} /></div>)
           }
         </div>
         <div>
-          <div className="tourneyName" style={{ marginLeft: '20px', float: 'left' }}>
+          <div className="tourneyName">
             {this.props.jsonData.tournament}
           </div>
-          <div className="timeBlock" style={{ marginRight: '20px', textAlign: 'right' }}>
+          <div className="timeRange">
             {timeBlock}
           </div>
           <br />
           <br />
-          <table width='100%' style={{ paddingBottom: '20px' }}>
+          <table className="cardTable" width='100%'>
             <tbody>
               <tr>
-                <th style={tableHeaderStyle}>PRIZES</th>
-                <th style={tableHeaderStyle}>GAMES</th>
-                <th style={tableHeaderStyle}>STARTS IN</th>
+                <th>PRIZES</th>
+                <th>GAMES</th>
+                <th>STARTS IN</th>
               </tr>
               <tr>
-                <td style={{ textAlign: 'center', color: 'limegreen', fontWeight: 'bold' }}>&#x20b9; {this.props.jsonData.prizes}</td>
-                <td style={cellStyle}>{this.props.jsonData.games}</td>
-                <td style={cellStyle}>{timeFromNow}</td>
+                <td className="cardPrize">&#x20b9; {this.props.jsonData.prizes}</td>
+                <td>{this.props.jsonData.games}</td>
+                <td>{timeFromNow}</td>
               </tr>
             </tbody>
           </table>

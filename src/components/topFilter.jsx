@@ -49,22 +49,20 @@ class TopFilter extends React.Component {
   }
 
   render() {
-    const cursorStyle = { cursor: 'pointer' }
-    const spanStyle = { color: 'white' }
     return (
-      <div style={{ display: 'flex', margin: '0px 20px 20px 20px' }}>
+      <div className="topFiltParent">
         <div className="topFilt" style={this.state.allMenuStyle} onClick={this.handleAllClick}>
-          <div className="item" style={{ margin: '10px' }}><img src={All} /></div>
-          <span className="caption" style={spanStyle}>ALL</span>
+          <div className="topFilterItem"><img src={All} /></div>
+          <span className="topFilterCaption" >ALL</span>
           <br /><br />
         </div>
         <div className="topFilt" style={this.state.cricMenuStyle} onClick={this.handleCricClick}>
-          <div className="item" style={{ margin: '10px' }}><img src={Cric} /></div>
-          <span className="caption" style={spanStyle}>CRICKET</span>
+          <div className="topFilterItem"><img src={Cric} /></div>
+          <span className="topFilterCaption" >CRICKET</span>
         </div>
         <div className="topFilt" style={this.state.footMenuStyle} onClick={this.handleFootClick}>
-          <div className="item" style={{ margin: '10px' }}><img src={Foob} /></div>
-          <span className="caption" style={spanStyle}>FOOTBALL</span>
+          <div className="topFilterItem"><img src={Foob} /></div>
+          <span className="topFilterCaption">FOOTBALL</span>
         </div>
       </div>);
   }

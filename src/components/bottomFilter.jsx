@@ -29,27 +29,24 @@ class BottomFilter extends React.Component {
   }
 
   render() {
-    const spanStyle = { color: 'white' };
-    const cursorStyle = { cursor: 'pointer' };
-    const divStyle = { flex: 1, textAlign: 'center', margin: '10px' };
     return (
       <div>
         {(this.props.isChallengesSelected) ?
-          <div className='btmFilt' style={{ display: 'flex' }}>
-            <div style={divStyle}><div><img src={Challenges} style={cursorStyle}
+          <div className='btmFiltParent'>
+            <div className='btmFilt'><div><img className='btmFiltChal' src={Challenges}
               onClick={this.handleChallengesLineClick} /></div>
-              <span className="caption" style={spanStyle}>Challenges</span></div>
-            <div style={divStyle}><div><img src={InPlayLine} style={cursorStyle}
+              <span className="btmFilterCaption">Challenges</span></div>
+            <div className='btmFilt'><div><img className='btmFiltInplay' src={InPlayLine}
               onClick={this.handlePlayLineClick} /></div>
-              <span className="caption" style={spanStyle}>In Play</span></div>
+              <span className="btmFilterCaption">In Play</span></div>
           </div> :
-          <div className='btmFilt' style={{ display: 'flex' }}>
-            <div style={divStyle}><div><img src={ChallengesLine} style={cursorStyle}
+          <div className='btmFiltParent'>
+            <div className='btmFilt'><div><img className='btmFiltChal' src={ChallengesLine}
               onClick={this.handleChallengesLineClick} /></div>
-              <span className="caption" style={spanStyle}>Challenges</span></div>
-            <div style={divStyle}><div><img src={InPlay} style={cursorStyle}
+              <span className="btmFilterCaption">Challenges</span></div>
+            <div className='btmFilt'><div><img className='btmFiltInplay' src={InPlay}
               onClick={this.handlePlayLineClick} /></div>
-              <span className="caption" style={spanStyle}>In Play</span></div>
+              <span className="btmFilterCaption">In Play</span></div>
           </div>
         }
       </div>);

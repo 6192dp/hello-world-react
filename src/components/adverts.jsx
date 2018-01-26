@@ -9,10 +9,8 @@ class BottomFilter extends React.Component {
   }
   render() {
     return (
-      <div className="advert" onClick={this.handleAdClick} style={{
-        margin: '20px', backgroundImage: "url('../../assets/images/Ad-480x160.png')",
-        backgroundRepeat: 'repeat-x', height: '180px', width: '97%', cursor: 'pointer'
-      }}>
+      <div className="advert" onClick={this.handleAdClick}
+        style={{ backgroundImage: "url('../../assets/images/Ad-480x160.png')" }}>
       </div>);
   }
 }
