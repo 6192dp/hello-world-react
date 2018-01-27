@@ -92,3 +92,11 @@ td.cardPrize{
         font-weight: normal;
         background: linear-gradient(135deg, midnightblue, midnightblue, midnightblue, blue, lightblue);
 }
+
+.cardPrize .gameCount{
+    width: 33%;
+}
+
+.timer{
+    width: 34%;
+}

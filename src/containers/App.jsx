@@ -187,7 +187,6 @@ export default class App extends React.Component {
 	}
 
 	render() {
-		debugger;
 		return (
 			<div className="appParent">
 				<h2 className="appHeader">Challenges</h2>
